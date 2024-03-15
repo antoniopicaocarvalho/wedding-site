@@ -1,0 +1,72 @@
+/* Reset CSS */
+
+/* Box-sizing border-box for all elements */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove margin and padding from all elements */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl,
+li,
+dt,
+dd,
+blockquote,
+figure,
+fieldset,
+legend,
+textarea,
+pre,
+iframe,
+hr,
+button,
+input {
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove list styles (bullet points and numbering) */
+ul, ol {
+  list-style: none;
+}
+
+/* Set default styles for the body element */
+body {
+  line-height: 1.6;
+}
+
+/* Remove default styles for heading elements */
+h1, h2, h3, h4, h5, h6 {
+  font-size: 1em;
+  font-weight: normal;
+}
+
+/* Remove default styles for anchor links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Remove default styles for form elements */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  margin: 0;
+}
+
+/* Additional resets or styles can be added as needed */
+
