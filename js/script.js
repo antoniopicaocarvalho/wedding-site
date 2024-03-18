@@ -82,7 +82,6 @@ const body = document.querySelector("body");
 const navLinks = document.querySelectorAll(".nav-link");
 
 function toggleNavbarMobile() {
-  if (window.innerWidth <= 768) {
     const isOpen = navList.getAttribute("data-open");
     isOpen ? navList.removeAttribute("data-open") : navList.setAttribute("data-open", true);
   
@@ -91,7 +90,6 @@ function toggleNavbarMobile() {
     navList.style.setProperty("--height", height);
   
     navContainer.lastElementChild.style.transform = "none";
-  }
 }
 
 function resetNavList() {
@@ -176,6 +174,8 @@ navLinks.forEach((link) => {
   link.addEventListener("click", (e) => {
       e.preventDefault();
       scrollToSection(link);
-      toggleNavbarMobile();
+      if (window.innerWidth <= 768) {
+        navSelector.checked = !navSelector.checked;
+      }
   });
 });
