@@ -82,14 +82,16 @@ const body = document.querySelector("body");
 const navLinks = document.querySelectorAll(".nav-link");
 
 function toggleNavbarMobile() {
-  const isOpen = navList.getAttribute("data-open");
-  isOpen ? navList.removeAttribute("data-open") : navList.setAttribute("data-open", true);
-
-  const height = isOpen ? "0px" : "100vh";
-  body.style.overflow = isOpen ? "auto" : "hidden";
-  navList.style.setProperty("--height", height);
-
-  navContainer.lastElementChild.style.transform = "none";
+  if (window.innerWidth <= 768) {
+    const isOpen = navList.getAttribute("data-open");
+    isOpen ? navList.removeAttribute("data-open") : navList.setAttribute("data-open", true);
+  
+    const height = isOpen ? "0px" : "100vh";
+    body.style.overflow = isOpen ? "auto" : "hidden";
+    navList.style.setProperty("--height", height);
+  
+    navContainer.lastElementChild.style.transform = "none";
+  }
 }
 
 function resetNavList() {
@@ -159,8 +161,6 @@ navSelector.addEventListener("click", () => {
 
 navLinks.forEach((link) => {
   link.addEventListener("click", () => {
-    if (window.innerWidth <= 768) {
       toggleNavbarMobile();
-    }
   });
 });
