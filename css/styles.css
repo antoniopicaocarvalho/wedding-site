@@ -313,12 +313,28 @@ header {
   font-size: var(--font-40-80);
 }
 @media only screen and (max-width: 768px) {
+  .hero-section > img {
+      object-position: 30% 50%;
+  }
+  .hero-text {
+    bottom: 12%;
+    right: 5%;
+    width: min(70%, 320px);
+  }
   .countdown-container {
     font-size: var(--font-40-80);
     transform: translateY(45%);
   }
   .countdown-container span {
     font-size: var(--font-32-52);
+  }
+}
+@media only screen and (max-width: 600px) {
+  .countdown-container p {
+    font-size: var(--font-32-52);
+  }
+  .countdown-container span {
+    font-size: var(--font-24-32);
   }
 }
 
@@ -425,9 +441,10 @@ header {
     justify-content: center;
     align-items: center;
     gap: var(--size-20-60);
+    padding: 0 var(--size-20-60);
   }
   .detalhes-content > div {
-    width: min(80%, 420px);
+    width: min(100%, 420px);
   }
 }
 
