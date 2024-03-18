@@ -126,9 +126,9 @@ function isViewportAtTop() {
   }
 }
 
-function scrollToSection() {
+function scrollToSection(link) {
   // Get the data-anchor attribute of the clicked link
-  const anchor = this.getAttribute('data-anchor');
+  const anchor = link.getAttribute('data-anchor');
 
   // Find the element with the corresponding ID
   const section = document.getElementById(anchor);
@@ -175,7 +175,7 @@ navSelector.addEventListener("click", () => {
 navLinks.forEach((link) => {
   link.addEventListener("click", (e) => {
       e.preventDefault();
-      scrollToSection();
+      scrollToSection(link);
       toggleNavbarMobile();
   });
 });
