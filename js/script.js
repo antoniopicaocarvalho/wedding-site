@@ -90,7 +90,6 @@ function toggleNavbarMobile() {
     navList.style.setProperty("--height", height);
   
     navContainer.lastElementChild.style.transform = "none";
-    navSelector.checked = !navSelector.checked;
 }
 
 function resetNavList() {
@@ -176,5 +175,8 @@ navLinks.forEach((link) => {
       e.preventDefault();
       scrollToSection(link);
       toggleNavbarMobile();
+      if (window.innerWidth <= 768) {
+        navSelector.checked = !navSelector.checked;
+      }
   });
 });
