@@ -126,6 +126,19 @@ function isViewportAtTop() {
   }
 }
 
+function scrollToSection() {
+  // Get the data-anchor attribute of the clicked link
+  const anchor = this.getAttribute('data-anchor');
+
+  // Find the element with the corresponding ID
+  const section = document.getElementById(anchor);
+
+  // Scroll to the section
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+
 let scrolling = false;
 window.addEventListener("scroll", () => {
   if (!scrolling) {
@@ -160,7 +173,9 @@ navSelector.addEventListener("click", () => {
 });
 
 navLinks.forEach((link) => {
-  link.addEventListener("click", () => {
+  link.addEventListener("click", (e) => {
+      e.preventDefault();
+      scrollToSection();
       toggleNavbarMobile();
   });
 });
